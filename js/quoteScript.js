@@ -4,7 +4,7 @@ const howManyQuoteOne = document.getElementById('howManyQuoteOne');
 const popularQuotesField = document.getElementById('popularQuotesField');
 
 const secondQuoteBtn = document.getElementById('secondQuoteBtn');
-const howManyQUoteTwo = document.getElementById('howManyQuoteTwo');
+const howManyQuoteTwo = document.getElementById('howManyQuoteTwo');
 const programQuotesField = document.getElementById('programQuotesField');
  
 
@@ -268,8 +268,6 @@ const setQuote = (whereTo, quateArray, quantity) => {
   for(let index of indexArrays) {
     generateQuote(index);
   }
-
-  // console.log(indexArrays);
 };
 
 /* Event Listeners */
@@ -280,5 +278,5 @@ firstQuoteBtn.onclick = e => {
 
 secondQuoteBtn.onclick = e => {
   e.preventDefault();
-  setQuote(programQuotesField, programmingQuoteArray, howManyQUoteTwo);
+  setQuote(programQuotesField, programmingQuoteArray, howManyQuoteTwo);
 };
