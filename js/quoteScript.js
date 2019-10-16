@@ -233,6 +233,7 @@ const getIndexes = (quantity, quote) => {
       let number = Math.floor(Math.random() * quote.length);
       indexArrays.push(number);
     };
+    
     selectIndexes();
     uniqueIndexes = Array.from(new Set(indexArrays));
     indexArrays = uniqueIndexes;
