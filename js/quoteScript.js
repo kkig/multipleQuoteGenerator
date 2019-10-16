@@ -1,9 +1,6 @@
 /* Get DOM elements */
 const firstQuoteBtn = document.getElementById('firstQuoteBtn');
-const firstQuote = document.getElementById('firstQuote');
-const firstQuoteName = document.getElementById('firstQuoteName');
 const howManyQuoteOne = document.getElementById('howManyQuoteOne');
-
 const popularQuotesField = document.getElementById('popularQuotesField');
 
 
@@ -59,40 +56,55 @@ const popuparQuoteArray = [
   }
 ];
 
+// Array of unique index
+let indexArrays = [];
+
+// Generate array of unique index numbers
+const getIndexes = () => {
+  indexArrays = [];
+  let uniqueIndexes = [];
+
+  while(indexArrays.length < howManyQuoteOne.value) {
+    // Add number to array
+    const selectIndexes = () => {
+      let number = Math.floor(Math.random() * popuparQuoteArray.length);
+      indexArrays.push(number);
+    };
+    selectIndexes();
+    uniqueIndexes = Array.from(new Set(indexArrays));
+    indexArrays = uniqueIndexes;
+  } 
+};
 
 const setFirstQuote = () => {
-  /*
-  if(popularQuotesField[0]) {
-    popularQuotesField.removeChild(0);
+  // Clear all the previous quotes
+  if(popularQuotesField.childElementCount > 0) {
+    popularQuotesField.innerHTML = '';
   }
+
+  // Generate ul element
   const popularQuoteLists = document.createElement('ul');
   popularQuoteLists.setAttribute('id','popularQuoteLists');
-  */
-  const generateQuote = () => {
-    let x = Math.floor(Math.random() * popuparQuoteArray.length);
+  popularQuotesField.append(popularQuoteLists);
 
+
+  // Generate quote to DOM
+  const generateQuote = (x) => {
     const quoteItem = document.createElement('li');
     const quoteName = document.createElement('strong');
-    popularQuoteLists.appendChild(quoteItem);
-    popularQuoteLists.appendChild(quoteName);
+    popularQuoteLists.append(quoteItem);
+    popularQuoteLists.append(quoteName);
     quoteItem.textContent = popuparQuoteArray[x].quote;
     quoteName.textContent = '- ' + popuparQuoteArray[x].name;
   };
 
-  for(i = 0; i < howManyQuoteOne.value; i++) {
-    generateQuote();
-  }
-  /*
-  const generateQuote = () => {
-    let x = Math.floor(Math.random() * popuparQuoteArray.length);
+  // Generate unique indexes
+  getIndexes();
 
-    firstQuote.textContent = popuparQuoteArray[x].quote;
-    firstQuoteName.textContent = '- ' + popuparQuoteArray[x].name;  
-  }; 
-  for(let i; i < howManyQuoteOne.value; i++) {
-    generateQuote();
+  for(let index of indexArrays) {
+    generateQuote(index);
   }
-  */
+  console.log(indexArrays);
 };
 
 firstQuoteBtn.addEventListener('click', setFirstQuote);
