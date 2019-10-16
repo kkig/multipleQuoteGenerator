@@ -61,14 +61,14 @@ h1, h2, h3 {
   padding: 2em 3em 1em 3em;
 }
 
-#popularQuoteLists {
+.quoteLists {
   text-align: left;
 }
 
-ul#popularQuoteLists > li {
+ul.quoteLists > li {
   padding-top: 1em;
 }
 
-ul#popularQuoteLists > li:first-child {
+ul.quoteLists > li:first-child {
   padding-top: 0;
 }

@@ -4,7 +4,7 @@ const howManyQuoteOne = document.getElementById('howManyQuoteOne');
 const popularQuotesField = document.getElementById('popularQuotesField');
 
 
-/* First Quote */
+/* Popular Quote */
 const popuparQuoteArray = [
   {
     quote: 'Don’t cry because it’s over, smile because it happened.',
@@ -56,18 +56,20 @@ const popuparQuoteArray = [
   }
 ];
 
-// Array of unique index
+/* Get array of unique idexes */
+// Array of unique index for quote
 let indexArrays = [];
 
 // Generate array of unique index numbers
-const getIndexes = () => {
+// (selectInput, selectQuoteArray)
+const getIndexes = (quantity, quote) => {
   indexArrays = [];
   let uniqueIndexes = [];
 
-  while(indexArrays.length < howManyQuoteOne.value) {
+  while(indexArrays.length < quantity.value) {
     // Add number to array
     const selectIndexes = () => {
-      let number = Math.floor(Math.random() * popuparQuoteArray.length);
+      let number = Math.floor(Math.random() * quote.length);
       indexArrays.push(number);
     };
     selectIndexes();
@@ -76,36 +78,41 @@ const getIndexes = () => {
   } 
 };
 
-const setFirstQuote = () => {
+/* Generate quote */
+const setQuote = (whereTo, quateArray, quantity) => {
   // Clear all the previous quotes
-  if(popularQuotesField.childElementCount > 0) {
-    popularQuotesField.innerHTML = '';
+  if(whereTo.childElementCount > 0) {
+    whereTo.innerHTML = '';
   }
 
   // Generate ul element
-  const popularQuoteLists = document.createElement('ul');
-  popularQuoteLists.setAttribute('id','popularQuoteLists');
-  popularQuotesField.append(popularQuoteLists);
-
+  const quoteLists = document.createElement('ul');
+  quoteLists.setAttribute('class','quoteLists');
+  whereTo.append(quoteLists);
 
   // Generate quote to DOM
   const generateQuote = (x) => {
     const quoteItem = document.createElement('li');
     const quoteName = document.createElement('strong');
-    popularQuoteLists.append(quoteItem);
-    popularQuoteLists.append(quoteName);
-    quoteItem.textContent = popuparQuoteArray[x].quote;
-    quoteName.textContent = '- ' + popuparQuoteArray[x].name;
+    quoteLists.append(quoteItem);
+    quoteLists.append(quoteName);
+    quoteItem.textContent = quateArray[x].quote;
+    quoteName.textContent = '- ' + quateArray[x].name;
   };
 
   // Generate unique indexes
-  getIndexes();
+  getIndexes(quantity, quateArray);
 
+  // Generate DOM element for each quote
   for(let index of indexArrays) {
     generateQuote(index);
   }
+
   console.log(indexArrays);
 };
 
-firstQuoteBtn.addEventListener('click', setFirstQuote);
-
+/* Event Listeners */
+firstQuoteBtn.onclick = function(e) {
+  e.preventDefault();
+  setQuote(popularQuotesField, popuparQuoteArray, howManyQuoteOne);
+}
