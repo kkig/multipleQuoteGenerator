@@ -9,7 +9,8 @@ const verbArray = [
   "rolling",
   "eating Pho",
   "playing Mario",
-  "watching Netflix"
+  "watching Netflix",
+  "doodling"
 ];
 
 const placeArray = [
@@ -21,11 +22,13 @@ const placeArray = [
 ];
 
 const withWhoArray = [
-  "Thirty Kittens",
-  "Twenty Puppies",
-  "Fifty of Rabbits",
-  "Moose",
-  "Bear"
+  "thirty kittens",
+  "twenty puppies",
+  "fifty rabbits",
+  "moose",
+  "bear",
+  "flock of sheep",
+  "pack of wolves"
 ];
 
 const setGenerator = () => {
