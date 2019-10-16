@@ -3,6 +3,10 @@ const firstQuoteBtn = document.getElementById('firstQuoteBtn');
 const howManyQuoteOne = document.getElementById('howManyQuoteOne');
 const popularQuotesField = document.getElementById('popularQuotesField');
 
+const secondQuoteBtn = document.getElementById('secondQuoteBtn');
+const howManyQUoteTwo = document.getElementById('howManyQuoteTwo');
+const programQuotesField = document.getElementById('programQuotesField');
+ 
 
 /* Popular Quote */
 const popuparQuoteArray = [
@@ -56,6 +60,111 @@ const popuparQuoteArray = [
   }
 ];
 
+/* Programming Quote */
+const programmingQuoteArray = [
+  {
+    quote: 'The best thing about a boolean is even if you are wrong, you are only off by a bit.',
+    name: 'Anonymous'
+  },
+  {
+    quote: 'Without requirements or design, programming is the art of adding bugs to an empty text file.',
+    name: 'Louis Srygley'
+  },
+  {
+    quote: 'Before software can be reusable it first has to be usable.',
+    name: 'Ralph Johnson'
+  },
+  {
+    quote: 'The best method for accelerating a computer is the one that boosts it by 9.8 m/s2.',
+    name: 'Anonymous'
+  },
+  {
+    quote: 'I think Microsoft named .Net so it wouldn’t show up in a Unix directory listing.',
+    name: 'Oktal'
+  },
+  {
+    quote: 'If builders built buildings the way programmers wrote programs, then the first woodpecker that came along would destroy civilization.',
+    name: 'Gerald Weinberg'
+  },
+  {
+    quote: 'There are two ways to write error-free programs; only the third one works.',
+    name: 'Alan J. Perlis'
+  },
+  {
+    quote: 'Ready, fire, aim: the fast approach to software development. Ready, aim, aim, aim, aim: the slow approach to software development.',
+    name: 'Anonymous'
+  },
+  {
+    quote: 'It’s not a bug – it’s an undocumented feature.',
+    name: 'Anonymous'
+  },
+  {
+    quote: 'One man’s crappy software is another man’s full-time job.',
+    name: 'Jessica Gaston'
+  },
+  {
+    quote: 'A good programmer is someone who always looks both ways before crossing a one-way street.',
+    name: 'Doug Linder'
+  },
+  {
+    quote: 'Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.',
+    name: 'Martin Golding'
+  },
+  {
+    quote: 'Programming is like sex. One mistake and you have to support it for the rest of your life.',
+    name: 'Michael Sinz'
+  },
+  {
+    quote: 'Deted code is debugged code.',
+    name: 'Jeff Sickel'
+  },
+  {
+    quote: 'Walking on water and developing software from a specification are easy if both are frozen.',
+    name: 'Edward V Berard'
+  },
+  {
+    quote: 'If debugging is the process of removing software bugs, then programming must be the process of putting them in.',
+    name: 'Edsger Dijkstra'
+  },
+  {
+    quote: 'Software undergoes beta testing shortly before it’s released. Beta is Latin for “still doesn’t work."',
+    name: 'Anonymous'
+  },
+  {
+    quote: 'Programming today is a race between software engineers striving to build bigger and better idiot-proof programs, and the universe trying to produce bigger and better idiots. So far, the universe is winning.',
+    name: 'Rick Cook'
+  },
+  {
+    quote: 'It’s a curious thing about our industry: not only do we not learn from our mistakes, but we also don’t learn from our successes.',
+    name: 'Keith Braithwaite'
+  },
+  {
+    quote: 'There are only two kinds of programming languages: those people always bitch about and those nobody uses.',
+    name: 'Bjarne Stroustrup'
+  },
+  {
+    quote: 'In order to understand recursion, one must first understand recursion.',
+    name: 'Anonymous'
+  },
+  {
+    quote: 'The cheapest, fastest, and most reliable components are those that aren’t there.',
+    name: 'Gordon Bell'
+  },
+  {
+    quote: 'The best performance improvement is the transition from the nonworking state to the working state.',
+    name: 'J. Osterhout'
+  },
+  {
+    quote: 'The trouble with programmers is that you can never tell what a programmer is doing until it’s too late.',
+    name: 'Seymour Cray'
+  },
+  {
+    quote: 'Don’t worry if it doesn’t work right. If everything did, you’d be out of a job.',
+    name: 'Mosher’s Law of Software Engineering'
+  },
+];
+
+
 /* Get array of unique idexes */
 // Array of unique index for quote
 let indexArrays = [];
@@ -108,7 +217,7 @@ const setQuote = (whereTo, quateArray, quantity) => {
     generateQuote(index);
   }
 
-  console.log(indexArrays);
+  // console.log(indexArrays);
 };
 
 /* Event Listeners */
@@ -116,3 +225,8 @@ firstQuoteBtn.onclick = function(e) {
   e.preventDefault();
   setQuote(popularQuotesField, popuparQuoteArray, howManyQuoteOne);
 }
+
+secondQuoteBtn.onclick = e => {
+  e.preventDefault();
+  setQuote(programQuotesField, programmingQuoteArray, howManyQUoteTwo);
+};

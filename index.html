@@ -25,10 +25,14 @@
   </header>
   <main>
     <section>
-      <div class="container text-center">
-        <h2>What is Kaoru doing now?</h2>
-        <div class="firstGenerator"></div>
-        <button type="button" class="btn btn-dark firstGeneratorBtn">Check</button>
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-12">
+            <h2>What is Kaoru doing now?</h2>
+            <div class="firstGenerator"></div>
+            <button type="button" class="btn btn-dark firstGeneratorBtn">Check</button>
+          </div>
+        </div>
       </div>
     </section>
     <section>
@@ -38,7 +42,7 @@
             <a class="nav-link active" id="quoteOne-tab" data-toggle="tab" href="#quoteOne" role="tab" aria-controls="quoteOne" aria-selected="true">Popular</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+            <a class="nav-link" id="quoteTwo-tab" data-toggle="tab" href="#quoteTwo" role="tab" aria-controls="quoteTwo" aria-selected="false">Program</a>
           </li>
         </ul>
 
@@ -47,7 +51,7 @@
             <form>
               <h3 class="quoteSectionTitle">Popular Quote Generator</h3>
               <p>Please select how many quote you want to see.</p>
-              <div id="popularQuotesField">
+              <div class="quoteInput" id="popularQuotesField">
               </div>
               <div class="form-group">
                 <label for="howManyQuoteOne">How many?</label>
@@ -64,7 +68,29 @@
               </button>
             </form>
           </div>
-          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Sample Two</div>
+
+          <div class="tab-pane fade" id="quoteTwo" role="tabpanel" aria-labelledby="quoteTwo-tab">
+            <form>
+              <h3 class="quoteSectionTitle">Programmer Quote Generator</h3>
+              <p>Please select how many quote you want to see.</p>
+              <div class="quoteInput" id="programQuotesField">
+              </div>
+              <div class="form-group">
+                <label for="howManyQuoteTwo">How many?</label>
+                <select class="form-control" id="howManyQuoteTwo">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+              <button type="button" class="btn btn-dark" id="secondQuoteBtn">
+                Generate
+              </button>
+            </form>
+
+          </div>
         </div>
       </div>
     </section>
