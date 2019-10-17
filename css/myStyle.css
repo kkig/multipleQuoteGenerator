@@ -32,6 +32,10 @@ h1, h2, h3 {
 }
 
 /* Quote Tabs */
+.nav-tabs {
+  border-bottom: none;
+}
+
 .tab-content {
   padding: 3em 0;
   background-color: white;
@@ -63,7 +67,7 @@ h1, h2, h3 {
 @media (min-width: 768px) {
   .quoteInput {
     padding: 2em 3em 1em 3em;
-  }  
+  }
 }
 
 .quoteLists {

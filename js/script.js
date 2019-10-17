@@ -32,11 +32,15 @@ const withWhoArray = [
 ];
 
 const setGenerator = () => {
+  firstGenerator.textContent = generateQuote();
+};
+
+const generateQuote = () => {
   let x = Math.floor(Math.random() * verbArray.length);
   let y = Math.floor(Math.random() * placeArray.length);
   let z = Math.floor(Math.random() * withWhoArray.length);
 
-  firstGenerator.textContent = "Kaoru is " + verbArray[x] + " " + placeArray[y] + " with " + withWhoArray[z] + ".";
+  return "Kaoru is " + verbArray[x] + " " + placeArray[y] + " with " + withWhoArray[z] + ".";
 };
 
 firstGeneratorBtn.addEventListener('click', setGenerator);

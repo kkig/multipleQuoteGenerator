@@ -96,6 +96,7 @@ const popuparQuoteArray = [
   }
 ];
 
+
 /* Programming Quotes */
 const programmingQuoteArray = [
   {
