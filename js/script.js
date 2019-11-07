@@ -31,10 +31,6 @@ const withWhoArray = [
   "pack of wolves"
 ];
 
-const setGenerator = () => {
-  firstGenerator.textContent = generateQuote();
-};
-
 const generateQuote = () => {
   let x = Math.floor(Math.random() * verbArray.length);
   let y = Math.floor(Math.random() * placeArray.length);
@@ -42,5 +38,10 @@ const generateQuote = () => {
 
   return "Kaoru is " + verbArray[x] + " " + placeArray[y] + " with " + withWhoArray[z] + ".";
 };
+
+const setGenerator = () => {
+  firstGenerator.textContent = generateQuote();
+};
+
 
 firstGeneratorBtn.addEventListener('click', setGenerator);

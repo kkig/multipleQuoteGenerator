@@ -43,17 +43,17 @@ h1, h2, h3 {
 
 .nav-tabs .nav-link {
   color: #ffff;
-  border: 1.5px solid transparent;
+  border: 1.25px solid #ffff;
   border-top-left-radius: .5rem;
   border-top-right-radius: .5rem;
 }
 
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-  border: 1.5px solid #ffff;
+  border: 1.25px solid #ffff;
 }
 
 .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
-  border: 1.5px solid #ffff;
+  border: 1.25px solid #ffff;
 }
 
 .form-group {
@@ -64,11 +64,7 @@ h1, h2, h3 {
 .quoteInput {
   padding: 1.25em 0;
 }
-@media (min-width: 768px) {
-  .quoteInput {
-    padding: 2em 3em 1em 3em;
-  }
-}
+
 
 .quoteLists {
   text-align: left;
@@ -80,4 +76,10 @@ ul.quoteLists > li {
 
 ul.quoteLists > li:first-child {
   padding-top: 0;
+}
+
+@media (min-width: 768px) {
+  .quoteInput {
+    padding: 2em 3em 1em 3em;
+  }
 }
